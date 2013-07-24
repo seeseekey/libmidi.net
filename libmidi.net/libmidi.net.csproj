@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>10.0.0</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{1FB62DC8-87E4-44C6-A2A7-22A083098263}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>libmidi.net</RootNamespace>
+    <AssemblyName>libmidi.net</AssemblyName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Enums\MetaEventType.cs" />
+    <Compile Include="Enums\MidiCommandCode.cs" />
+    <Compile Include="Enums\MidiController.cs" />
+    <Compile Include="Enums\MidiNote.cs" />
+    <Compile Include="Events\ChannelAfterTouchEvent.cs" />
+    <Compile Include="Events\ControlChangeEvent.cs" />
+    <Compile Include="Events\KeySignatureEvent.cs" />
+    <Compile Include="Events\MetaEvent.cs" />
+    <Compile Include="Events\MidiEvent.cs" />
+    <Compile Include="Events\NoteEvent.cs" />
+    <Compile Include="Events\NoteOnEvent.cs" />
+    <Compile Include="Events\PatchChangeEvent.cs" />
+    <Compile Include="Events\PitchWheelChangeEvent.cs" />
+    <Compile Include="Events\SequencerSpecificEvent.cs" />
+    <Compile Include="Events\SmpteOffsetEvent.cs" />
+    <Compile Include="Events\SysexEvent.cs" />
+    <Compile Include="Events\TempoEvent.cs" />
+    <Compile Include="Events\TextEvent.cs" />
+    <Compile Include="Events\TimeSignatureEvent.cs" />
+    <Compile Include="Events\TrackSequenceNumberEvent.cs" />
+    <Compile Include="ByteEncoding.cs" />
+    <Compile Include="MergeSort.cs" />
+    <Compile Include="MidiEventCollection.cs" />
+    <Compile Include="MidiEventComparer.cs" />
+    <Compile Include="MidiFile.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <Folder Include="Enums\" />
+    <Folder Include="Events\" />
+  </ItemGroup>
+</Project>
