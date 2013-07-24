@@ -11,21 +11,10 @@ namespace createMidi
 		{
 			MidiEventCollection eventCollection=new MidiEventCollection(1, 30);
 
-			eventCollection.AddEvent(new NoteOnEvent(15, 1, MidiNote.C1, 100, 15), 1);
-			eventCollection.AddEvent(new NoteOnEvent(30, 1, MidiNote.D1, 100, 15), 1);
-			eventCollection.AddEvent(new NoteOnEvent(45, 1, MidiNote.E1, 100, 15), 1);
-			eventCollection.AddEvent(new NoteOnEvent(60, 1, MidiNote.F1, 100, 15), 1);
-			eventCollection.AddEvent(new NoteOnEvent(75, 1, MidiNote.G1, 100, 15), 1);
+			eventCollection.AddEvent(new NoteOnEvent(15, 1, MidiNote.C1, 100, 15), 1); //Note on
+			eventCollection.AddEvent(new NoteOnEvent(15+100, 1, MidiNote.C1, 0, 0), 1); //Note off
 
-			for(int i=0; i<12; i++)
-			{
-			    eventCollection.AddEvent(new NoteOnEvent(90+i*15, 1, i*10, 100, 15), 1);
-			}
-
-			for(int i=0; i<12; i++)
-			{
-			    eventCollection.AddEvent(new NoteOnEvent(90+180+i*15, 1, 120-i*10, 100, 15), 1);
-			}
+			eventCollection.PrepareForExport();
 
 			MidiFile.Export("test.mid", eventCollection);
 		}
