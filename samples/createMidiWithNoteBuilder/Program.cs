@@ -11,8 +11,8 @@ namespace createMidiWithNoteBuilder
 			NoteBuilder builder = new NoteBuilder(120);
 
 			builder.Add(new Note(NoteType.Quarter, 100, MidiNote.C4));
-			builder.Add(new Note(NoteType.Quarter, 50, MidiNote.D4));
-			builder.Add(new Note(NoteType.Quarter, 50, MidiNote.E4));
+			builder.Add(new Note(NoteType.Quarter, 90, MidiNote.D4));
+			builder.Add(new Note(NoteType.Quarter, 90, MidiNote.E4));
 			builder.Add(new Note(NoteType.Quarter, 100, MidiNote.F4));
 
 			builder.Add(new Note(NoteType.Half, 127, Chords.CDur));

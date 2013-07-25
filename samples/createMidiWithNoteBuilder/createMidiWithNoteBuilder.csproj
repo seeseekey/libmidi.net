@@ -8,7 +8,7 @@
     <ProjectGuid>{A6B4F1E2-56D1-47C7-87B4-D2C37B7A1A7B}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <RootNamespace>createMidiWithNoteBuilder</RootNamespace>
-    <AssemblyName>createMidiWithNoteBuilder.cs</AssemblyName>
+    <AssemblyName>createMidiWithNoteBuilder</AssemblyName>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
