@@ -33,11 +33,16 @@ namespace libmidi.net
 			foreach(Note note in notes)
 			{
 				if((int)note.Type > longestNoteType) longestNoteType = (int)note.Type;
-				events.AddEvent(new NoteOnEvent(currentTime, 1, note.Tone, 100, (int)(note.Type)), 1); //Note on
-				events.AddEvent(new NoteOnEvent(currentTime+(int)note.Type, 1, note.Tone, 0, 0), 1); //Note off
+
+				foreach(MidiNote tone in note.Tones)
+				{
+				
+					events.AddEvent(new NoteOnEvent(currentTime, 1, tone, note.Velocity, (int)(note.Type)), 1); //Note on
+					events.AddEvent(new NoteOnEvent(currentTime + (int)note.Type, 1, tone, 0, 0), 1); //Note off
+				}
 			}
 
-			currentTime+=longestNoteType;
+			currentTime += longestNoteType;
 		}
 
 		public void Save(string filename)

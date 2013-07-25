@@ -5,13 +5,13 @@ namespace libmidi.net
 {
 	public class Note
 	{
-		public MidiNote Tone { get; private set;}
+		public MidiNote[] Tones { get; private set;}
 		public NoteType Type { get; private set;}
 		public int Velocity { get; private set;}
 
-		public Note(NoteType type, int velocity, MidiNote tone)
+		public Note(NoteType type, int velocity, params MidiNote[] tones)
 		{
-			Tone = tone;
+			Tones = tones;
 			Type = type;
 			Velocity = velocity;
 		}
