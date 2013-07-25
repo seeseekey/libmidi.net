@@ -53,15 +53,20 @@
     <Compile Include="Events\TextEvent.cs" />
     <Compile Include="Events\TimeSignatureEvent.cs" />
     <Compile Include="Events\TrackSequenceNumberEvent.cs" />
-    <Compile Include="ByteEncoding.cs" />
-    <Compile Include="MergeSort.cs" />
-    <Compile Include="MidiEventCollection.cs" />
-    <Compile Include="MidiEventComparer.cs" />
-    <Compile Include="MidiFile.cs" />
+    <Compile Include="Base\ByteEncoding.cs" />
+    <Compile Include="Base\MergeSort.cs" />
+    <Compile Include="Base\MidiEventCollection.cs" />
+    <Compile Include="Base\MidiEventComparer.cs" />
+    <Compile Include="Base\MidiFile.cs" />
+    <Compile Include="NoteBuilder.cs" />
+    <Compile Include="NoteType.cs" />
+    <Compile Include="Note.cs" />
+    <Compile Include="Chords.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
     <Folder Include="Enums\" />
     <Folder Include="Events\" />
+    <Folder Include="Base\" />
   </ItemGroup>
 </Project>

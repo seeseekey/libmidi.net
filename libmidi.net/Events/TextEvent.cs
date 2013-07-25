@@ -2,6 +2,7 @@ using System;
 using System.IO;
 using System.Text;
 using libmidi.net.Enums;
+using libmidi.net.Base;
 
 namespace libmidi.net.Events
 {
