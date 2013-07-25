@@ -26,7 +26,7 @@ namespace libmidi.net
 			currentTime = 0;
 		}
 
-		public void AddNotes(params Note[] notes)
+		public void Add(params Note[] notes)
 		{
 			int longestNoteType = 0;
 

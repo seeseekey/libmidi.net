@@ -7,7 +7,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{A6B4F1E2-56D1-47C7-87B4-D2C37B7A1A7B}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>createMidiWithNoteBuilder.cs</RootNamespace>
+    <RootNamespace>createMidiWithNoteBuilder</RootNamespace>
     <AssemblyName>createMidiWithNoteBuilder.cs</AssemblyName>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -36,4 +36,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <ProjectReference Include="..\..\libmidi.net\libmidi.net.csproj">
+      <Project>{1FB62DC8-87E4-44C6-A2A7-22A083098263}</Project>
+      <Name>libmidi.net</Name>
+    </ProjectReference>
+  </ItemGroup>
 </Project>
