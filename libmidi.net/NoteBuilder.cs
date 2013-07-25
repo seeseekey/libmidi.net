@@ -26,17 +26,6 @@ namespace libmidi.net
 			currentTime = 0;
 		}
 
-		public void AddNotes(NoteType type, params MidiNote[] notes)
-		{
-			foreach(MidiNote note in notes)
-			{
-				events.AddEvent(new NoteOnEvent(currentTime, 1, note, 100, (int)type), 1); //Note on
-				events.AddEvent(new NoteOnEvent(currentTime+(int)type, 1, note, 0, 0), 1); //Note off
-			}
-
-			currentTime+=(int)type;
-		}
-
 		public void AddNotes(params Note[] notes)
 		{
 			int longestNoteType = 0;
@@ -49,17 +38,6 @@ namespace libmidi.net
 			}
 
 			currentTime+=longestNoteType;
-		}
-
-		public void AddNotes(NoteType type, params int[] notes)
-		{
-			foreach(int note in notes)
-			{
-				events.AddEvent(new NoteOnEvent(currentTime, 1, note, 100, (int)type), 1); //Note on
-				events.AddEvent(new NoteOnEvent(currentTime+(int)type, 1, note, 0, 0), 1); //Note off
-			}
-
-			currentTime+=(int)type;
 		}
 
 		public void Save(string filename)
