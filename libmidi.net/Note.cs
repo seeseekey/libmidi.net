@@ -44,7 +44,7 @@ namespace libmidi.net
 			{
 				tones += note.ToString() + ", ";
 			}
-			tones.Trim().TrimEnd(',');
+			tones=tones.Trim().TrimEnd(',');
 
 			return string.Format("[Note: Tones={0}, Type={1}, Velocity={2}]", tones, Type, Velocity);
 		}
