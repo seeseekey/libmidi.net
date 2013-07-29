@@ -1,19 +1,40 @@
 using System;
 using libmidi.net.Enums;
+using System.Collections.Generic;
 
 namespace libmidi.net
 {
 	public class Note
 	{
-		public MidiNote[] Tones { get; private set;}
+		public List<MidiNote> Tones { get; private set;}
 		public NoteType Type { get; private set;}
 		public int Velocity { get; private set;}
 
 		public Note(NoteType type, int velocity, params MidiNote[] tones)
 		{
-			Tones = tones;
+			Tones = new List<MidiNote>();
+			Tones.AddRange(tones);
 			Type = type;
 			Velocity = velocity;
+		}
+
+		public override bool Equals(object obj)
+		{
+			return this == (Note)obj;
+		}
+
+		public override int GetHashCode()
+		{
+			int hash = 0;
+			foreach(MidiNote note in Tones)
+			{
+				hash += (int)note;
+			}
+
+			hash += Velocity;
+			hash += (int)Type;
+
+			return hash;
 		}
 
 		public override string ToString()
@@ -34,7 +55,7 @@ namespace libmidi.net
 				return false;
 			if(a.Velocity != b.Velocity)
 				return false;
-			if(a.Tones.Length != b.Tones.Length)
+			if(a.Tones.Count != b.Tones.Count)
 				return false;
 
 			foreach(MidiNote noteB in b.Tones)
@@ -47,9 +68,11 @@ namespace libmidi.net
 						found = true;
 						break;
 					}
+				}
 
-					if(found == false)
-						return false;
+				if(found == false)
+				{
+					return false;
 				}
 			}
 
