@@ -3,8 +3,6 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>10.0.0</ProductVersion>
-    <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{1FB62DC8-87E4-44C6-A2A7-22A083098263}</ProjectGuid>
     <OutputType>Library</OutputType>
     <RootNamespace>libmidi.net</RootNamespace>

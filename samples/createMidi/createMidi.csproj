@@ -3,8 +3,6 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>10.0.0</ProductVersion>
-    <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{AD1B9F5B-70EE-4057-95F5-A2D82A3CE4F0}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <RootNamespace>createMidi</RootNamespace>
